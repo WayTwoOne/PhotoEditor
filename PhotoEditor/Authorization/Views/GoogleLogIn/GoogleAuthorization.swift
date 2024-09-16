@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct GoogleAuthorization: View {
+    @EnvironmentObject var viewModel: AuthorizationViewModel
     var body: some View {
-        Button {
-            ()
-        } label: {
-            Image("googleIcon")
+        VStack {
+            Text("or sign in with")
+                .padding()
+            Button {
+                viewModel.googleAuth()
+            } label: {
+                Image("googleIcon")
+                    .resizable()
+                    .frame(minWidth: 40, idealWidth: 50, maxWidth: 60, minHeight: 40, idealHeight: 50, maxHeight: 60, alignment: .center)
+            }
         }
-
     }
 }
 

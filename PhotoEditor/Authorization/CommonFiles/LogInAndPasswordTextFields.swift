@@ -8,20 +8,29 @@
 import SwiftUI
 
 struct LogInAndPasswordTextFields: View {
-    @Binding var login: String
-    @Binding var password: String
+    var email: Binding<String>
+    var password: Binding<String>
+    var repeatPassword: Binding<String>?
+    var isNewUser: Bool = false
     
     var body: some View {
         VStack() {
-            TextField("Email", text: $login)
+            TextField("Email", text: email)
+                .padding()
+                .background(Color(.systemGray6))
+                .cornerRadius(15)
+           
+            SecureField("Password", text: password)
                 .padding()
                 .background(Color(.systemGray6))
                 .cornerRadius(15)
             
-            SecureField("Password", text: $password)
-                .padding()
-                .background(Color(.systemGray6))
-                .cornerRadius(15)
+            if isNewUser {
+                SecureField("Password", text: repeatPassword! )
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(15)
+            }
             
         }
         .padding(.horizontal)
@@ -30,6 +39,6 @@ struct LogInAndPasswordTextFields: View {
 
 struct LogInAndPasswordTextFields_Previews: PreviewProvider {
     static var previews: some View {
-        LogInAndPasswordTextFields(login: .constant("Hello"), password: .constant("Bye"))
+        LogInAndPasswordTextFields(email: .constant("Hello"), password: .constant("Bye"))
     }
 }

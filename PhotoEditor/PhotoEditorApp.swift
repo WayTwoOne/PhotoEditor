@@ -20,10 +20,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct PhotoEditorApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
+    @StateObject private var viewModel = AuthorizationViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }

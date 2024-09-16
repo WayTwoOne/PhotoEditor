@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct LogInButtonView: View {
+struct LoginOrRegistrationButtonView: View {
     @State var buttonName = ""
     @State var buttonColor = Color.blue
+    var action: () -> Void
     private let width = UIScreen.main.bounds.width
     private let height = UIScreen.main.bounds.height
     var body: some View {
         Button {
-            ()
+            action()
         } label: {
             ZStack {
                 Rectangle()
@@ -32,6 +33,6 @@ struct LogInButtonView: View {
 
 struct LogInButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInButtonView()
+        LoginOrRegistrationButtonView(action: {})
     }
 }
