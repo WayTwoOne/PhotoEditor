@@ -9,8 +9,9 @@ import SwiftUI
 
 struct LogInAndPasswordTextFields: View {
     var email: Binding<String>
-    var password: Binding<String>
+    var password: Binding<String>?
     var repeatPassword: Binding<String>?
+    var isSignIn: Bool = false
     var isNewUser: Bool = false
     
     var body: some View {
@@ -20,10 +21,12 @@ struct LogInAndPasswordTextFields: View {
                 .background(Color(.systemGray6))
                 .cornerRadius(15)
            
-            SecureField("Password", text: password)
-                .padding()
-                .background(Color(.systemGray6))
-                .cornerRadius(15)
+            if isSignIn {
+                SecureField("Password", text: password!)
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(15)
+            }
             
             if isNewUser {
                 SecureField("Password", text: repeatPassword! )

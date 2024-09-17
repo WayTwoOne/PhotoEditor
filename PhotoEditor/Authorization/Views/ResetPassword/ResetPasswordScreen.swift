@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ResetPasswordScreen: View {
+    @EnvironmentObject var viewModel: AuthorizationViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        LogInAndPasswordTextFields(email: $viewModel.email)
     }
 }
 
 struct ResetPasswordScreen_Previews: PreviewProvider {
     static var previews: some View {
         ResetPasswordScreen()
+            .environmentObject(AuthorizationViewModel())
     }
 }

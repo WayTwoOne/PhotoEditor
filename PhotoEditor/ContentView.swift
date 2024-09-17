@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: AuthorizationViewModel
     var body: some View {
         NavigationView {
-            LogInScreen()
+            if viewModel.isPresentedEditorScreen {
+                EditorTestScreen()
+            } else {
+                LogInScreen()
+            }
         }
     }
 }

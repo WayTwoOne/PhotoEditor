@@ -14,11 +14,11 @@ struct RegistrationButtonView: View {
             Text("Dont have an account?")
             Button {
                 viewModel.resetLoginAndPassword()
-                viewModel.presented()
+                viewModel.presentedFullScreen()
             } label: {
                 Text("Sign up")
                     .foregroundColor(.blue)
-            }.fullScreenCover(isPresented: $viewModel.isPresented) {
+            }.fullScreenCover(isPresented: $viewModel.isPresentedFullScreen) {
                 RegistrationScreen()
             }
         }

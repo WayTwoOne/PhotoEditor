@@ -6,16 +6,94 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseFirestore
 
 final class AuthorizationViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var repeatPassword = ""
-    @Published var isPresented = false
     
-    func auth() {}
+    @Published var alert = ""
     
-    func register() {}
+    @Published var isPresentedFullScreen = false
+    @Published var isPresentedEditorScreen = false
+    @Published var isPresentedAlert = false
+    
+    func auth() {
+        let user = UserData(email: email, password: password)
+        Auth.auth().signIn(withEmail: user.email, password: user.password) { result, errors in
+            guard errors == nil else {
+                switch errors {
+                case .none:
+                    return
+                case .some(_):
+                    self.isPresentedAlert = true
+                    self.alert = "You made a mistake in your email or password"
+                }
+                return
+            }
+            self.isPresentedEditorScreen = true
+        }
+    }
+    
+    func register() {
+        self.alert = ""
+        let user = UserData(email: email, password: repeatPassword)
+        Auth.auth().createUser(withEmail: user.email, password: user.password) { result, errors in
+            guard errors == nil else {
+                switch errors {
+                case .none:
+                    return
+                case .some(let error):
+                    self.isPresentedAlert = true
+                    self.alert = error.localizedDescription
+                }
+                
+                if !self.passwordsAreTheSame() {
+                    self.isPresentedAlert = true
+                    self.alert = "Your passwords don't match"
+                }
+                
+                return
+            }
+            
+            self.resetLoginAndPassword()
+            
+            self.presentedFullScreen()
+            
+            self.sendEmailVerification(with: result)
+            
+            self.addNewUserInBase(with: result, and: user)
+        }
+    }
+    
+    func resetPassword() {
+        
+    }
+    
+    func sendEmailVerification(with result: AuthDataResult?) {
+        result?.user.sendEmailVerification()
+    }
+    
+    func addNewUserInBase(with result: AuthDataResult?, and user: UserData) {
+        if let uid = result?.user.uid {
+            Firestore.firestore()
+                .collection("user")
+                .document(uid)
+                .setData([
+                    "email" : user.email,
+                    "date" : Date()
+                ], merge: true) { error in
+                    switch error {
+                    case .none:
+                        print("success")
+                    case .some(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+        }
+    }
     
     func googleAuth() {
         print("если что переделать под NavigationLink")
@@ -27,19 +105,11 @@ final class AuthorizationViewModel: ObservableObject {
         repeatPassword = ""
     }
     
-    func presented() {
-        self.isPresented.toggle()
+    func passwordsAreTheSame() -> Bool {
+        password == repeatPassword
     }
-}
-
-extension AuthorizationViewModel {
-    func textFieldValidatorEmail(_ string: String) -> Bool {
-        if string.count > 100 {
-            return false
-        }
-        let emailFormat = "(?:[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}" + "~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\" + "x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[\\p{L}0-9](?:[a-" + "z0-9-]*[\\p{L}0-9])?\\.)+[\\p{L}0-9](?:[\\p{L}0-9-]*[\\p{L}0-9])?|\\[(?:(?:25[0-5" + "]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-" + "9][0-9]?|[\\p{L}0-9-]*[\\p{L}0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21" + "-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
-        //let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
-        return emailPredicate.evaluate(with: string)
+    
+    func presentedFullScreen() {
+        isPresentedFullScreen.toggle()
     }
 }

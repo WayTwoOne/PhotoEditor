@@ -13,13 +13,15 @@ struct LogInScreen: View {
     var body: some View {
         VStack {
             VStack(spacing: 15) {
-                LogInAndPasswordTextFields(email: $viewModel.email, password: $viewModel.password, isNewUser: false)
+                LogInAndPasswordTextFields(email: $viewModel.email, password: $viewModel.password, isSignIn: true, isNewUser: false)
                 
                 ResetPasswordView()
 
                 LoginOrRegistrationButtonView(buttonName: "Login", buttonColor: .green, action: {
                     viewModel.auth()
-                })
+                }).alert(isPresented: $viewModel.isPresentedAlert) {
+                    Alert(title: Text("Ooops!"), message: Text(viewModel.alert), dismissButton: .cancel())
+                }
             }
             
             
