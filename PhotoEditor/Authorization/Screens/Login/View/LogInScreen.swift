@@ -10,6 +10,7 @@ import SwiftUI
 struct LogInScreen: View {
     @EnvironmentObject var loginVM: LoginViewModel
     @StateObject private var registerVM = RegisterUser(service: RegistrationService())
+    @StateObject private var resetPasswordVM = ResetPasswordViewModel(service: ResetPasswordService())
 //    @EnvironmentObject var registerVM: RegisterUser
     var body: some View {
         VStack {
@@ -21,7 +22,7 @@ struct LogInScreen: View {
                 ButtonForAuthenticationModule(buttonName: "Sign in", buttonColor: .green, action: {
                     loginVM.auth()
                 }).alert(isPresented: $loginVM.isPresentedAlert) {
-                    Alert(title: Text("Ooops!"), message: Text(loginVM.alert), dismissButton: .cancel())
+                    Alert(title: Text(loginVM.alertTitle), message: Text(loginVM.alert), dismissButton: .cancel())
                 }
             }
             
@@ -39,6 +40,7 @@ struct LogInScreen: View {
             
         }
         .environmentObject(registerVM)
+        .environmentObject(resetPasswordVM)
     }
 }
 

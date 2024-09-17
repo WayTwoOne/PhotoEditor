@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct GoogleAuthorization: View {
-    @EnvironmentObject var viewModel: AuthorizationViewModel
     var body: some View {
         VStack {
             Text("or sign in with")
                 .padding()
             Button {
-                viewModel.googleAuth()
+                ()
             } label: {
                 Image("googleIcon")
                     .resizable()

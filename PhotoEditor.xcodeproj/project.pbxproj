@@ -13,7 +13,6 @@
 		E720F90C2C989806009DB53A /* ButtonForAuthenticationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F90B2C989806009DB53A /* ButtonForAuthenticationModule.swift */; };
 		E720F90E2C98A534009DB53A /* RegistrationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F90D2C98A534009DB53A /* RegistrationScreen.swift */; };
 		E720F9112C98A616009DB53A /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F9102C98A616009DB53A /* ResetPasswordView.swift */; };
-		E720F9142C98A642009DB53A /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F9132C98A642009DB53A /* AuthorizationViewModel.swift */; };
 		E720F9162C98ADA0009DB53A /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F9152C98ADA0009DB53A /* ForgotPassword.swift */; };
 		E720F91A2C98B5C4009DB53A /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F9192C98B5C4009DB53A /* ResetPasswordScreen.swift */; };
 		E720F91C2C98BA6D009DB53A /* RegistrationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F91B2C98BA6D009DB53A /* RegistrationButtonView.swift */; };
@@ -35,6 +34,8 @@
 		E75A3B052C98203D00981E69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75A3B042C98203D00981E69 /* Assets.xcassets */; };
 		E75A3B082C98203D00981E69 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75A3B072C98203D00981E69 /* Preview Assets.xcassets */; };
 		E75A3B112C9830DE00981E69 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E75A3B102C9830DE00981E69 /* GoogleService-Info.plist */; };
+		E7D4F5D92C9A3DD300BC0310 /* ResetPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4F5D82C9A3DD300BC0310 /* ResetPasswordService.swift */; };
+		E7D4F5DB2C9A3E5500BC0310 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4F5DA2C9A3E5500BC0310 /* ResetPasswordViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +45,6 @@
 		E720F90B2C989806009DB53A /* ButtonForAuthenticationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonForAuthenticationModule.swift; sourceTree = "<group>"; };
 		E720F90D2C98A534009DB53A /* RegistrationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreen.swift; sourceTree = "<group>"; };
 		E720F9102C98A616009DB53A /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
-		E720F9132C98A642009DB53A /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		E720F9152C98ADA0009DB53A /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		E720F9192C98B5C4009DB53A /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
 		E720F91B2C98BA6D009DB53A /* RegistrationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationButtonView.swift; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		E75A3B072C98203D00981E69 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E75A3B102C9830DE00981E69 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E75A3B122C9830FE00981E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E7D4F5D82C9A3DD300BC0310 /* ResetPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordService.swift; sourceTree = "<group>"; };
+		E7D4F5DA2C9A3E5500BC0310 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				E744E9B22C99899A0052C4D7 /* Models */,
-				E720F9122C98A62B009DB53A /* ViewModels */,
 				E720F90A2C98811D009DB53A /* Screens */,
 			);
 			path = Authorization;
@@ -139,21 +140,13 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		E720F90F2C98A605009DB53A /* ResetPasswordView */ = {
+		E720F90F2C98A605009DB53A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				E720F9102C98A616009DB53A /* ResetPasswordView.swift */,
 				E720F9192C98B5C4009DB53A /* ResetPasswordScreen.swift */,
 			);
-			path = ResetPasswordView;
-			sourceTree = "<group>";
-		};
-		E720F9122C98A62B009DB53A /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				E720F9132C98A642009DB53A /* AuthorizationViewModel.swift */,
-			);
-			path = ViewModels;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E744E9B22C99899A0052C4D7 /* Models */ = {
@@ -185,17 +178,19 @@
 		E744E9C62C99F51F0052C4D7 /* ResetPassword */ = {
 			isa = PBXGroup;
 			children = (
-				E744E9C72C99F52C0052C4D7 /* ResetPasswordViewModels */,
-				E720F90F2C98A605009DB53A /* ResetPasswordView */,
+				E7D4F5D72C9A3DA500BC0310 /* Services */,
+				E744E9C72C99F52C0052C4D7 /* ViewModels */,
+				E720F90F2C98A605009DB53A /* Views */,
 			);
 			path = ResetPassword;
 			sourceTree = "<group>";
 		};
-		E744E9C72C99F52C0052C4D7 /* ResetPasswordViewModels */ = {
+		E744E9C72C99F52C0052C4D7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E7D4F5DA2C9A3E5500BC0310 /* ResetPasswordViewModel.swift */,
 			);
-			path = ResetPasswordViewModels;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		E744E9C82C99F5430052C4D7 /* Registration */ = {
@@ -288,6 +283,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E7D4F5D72C9A3DA500BC0310 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E7D4F5D82C9A3DD300BC0310 /* ResetPasswordService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -369,11 +372,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E720F9142C98A642009DB53A /* AuthorizationViewModel.swift in Sources */,
 				E720F91A2C98B5C4009DB53A /* ResetPasswordScreen.swift in Sources */,
 				E720F90E2C98A534009DB53A /* RegistrationScreen.swift in Sources */,
 				E744E9D32C99FD8D0052C4D7 /* RegistrationViewModel.swift in Sources */,
 				E720F9072C988067009DB53A /* LogInScreen.swift in Sources */,
+				E7D4F5DB2C9A3E5500BC0310 /* ResetPasswordViewModel.swift in Sources */,
 				E744E9D12C99F9030052C4D7 /* RegistrationService.swift in Sources */,
 				E720F9052C987FD7009DB53A /* LogInAndPasswordTextFields.swift in Sources */,
 				E744E9D62C9A18200052C4D7 /* LoginService.swift in Sources */,
@@ -382,6 +385,7 @@
 				E720F9092C988111009DB53A /* GoogleAuthorization.swift in Sources */,
 				E744E9C12C99B44F0052C4D7 /* EditorTestScreen.swift in Sources */,
 				E75A3B032C98203B00981E69 /* ContentView.swift in Sources */,
+				E7D4F5D92C9A3DD300BC0310 /* ResetPasswordService.swift in Sources */,
 				E744E9CD2C99F5C50052C4D7 /* LoginViewModel.swift in Sources */,
 				E744E9B42C9989AC0052C4D7 /* UserModel.swift in Sources */,
 				E720F90C2C989806009DB53A /* ButtonForAuthenticationModule.swift in Sources */,

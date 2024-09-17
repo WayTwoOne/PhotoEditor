@@ -22,8 +22,8 @@ final class LoginViewModel: ObservableObject {
     var alertTitle = ""
     var alert = ""
     
-    var isPresentedAlert = false
-    var isPresentedEditorScreen = false
+    @Published var isPresentedAlert = false
+    @Published var isPresentedEditorScreen = false
     
     private var service: LoginProtocol
     
@@ -40,7 +40,6 @@ final class LoginViewModel: ObservableObject {
             .sink { [weak self] result in
                 switch result {
                 case .finished:
-                    print("did smtg")
                     return
                 case .failure(_):
                     self?.isPresentedAlert = true
@@ -49,7 +48,6 @@ final class LoginViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] in
                 self?.presentedEditorScreen()
-                print("presented editor screen")
             }
             .store(in: &subscriptions)
     }

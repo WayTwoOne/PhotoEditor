@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var loginVM = LoginViewModel(service: LoginService())
-//    @EnvironmentObject var loginVM: LoginViewModel
     var body: some View {
         NavigationView {
             if !loginVM.isPresentedEditorScreen {
@@ -26,7 +25,5 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(LoginViewModel(service: LoginService()))
-            .environmentObject(AuthorizationViewModel())
-
     }
 }

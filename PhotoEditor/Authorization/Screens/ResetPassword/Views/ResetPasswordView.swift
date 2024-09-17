@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ResetPasswordView: View {
-    @EnvironmentObject var viewModel: AuthorizationViewModel
+    @EnvironmentObject var resetPasswordVM: ResetPasswordViewModel
     var body: some View {
         Button(action: {
-            viewModel.presentedModalScreen()
+            resetPasswordVM.presentedModalScreen()
         }) {
             Text("Forgot my password")
                 .foregroundColor(.gray)
-        }.sheet(isPresented: $viewModel.isPresentedModalScreen) {
+        }.sheet(isPresented: $resetPasswordVM.isPresentedModalScreen) {
             ResetPasswordScreen()
         }
     }

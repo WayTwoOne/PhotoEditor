@@ -28,6 +28,6 @@ struct RegistrationButtonView: View {
 struct RegistrationButtonView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationButtonView()
-            .environmentObject(AuthorizationViewModel())
+            .environmentObject(RegisterUser(service: RegistrationService()))
     }
 }

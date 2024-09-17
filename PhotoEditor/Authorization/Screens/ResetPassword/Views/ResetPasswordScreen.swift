@@ -8,24 +8,29 @@
 import SwiftUI
 
 struct ResetPasswordScreen: View {
-    @EnvironmentObject var viewModel: AuthorizationViewModel
+    @EnvironmentObject var resetPasswordVM: ResetPasswordViewModel
     var body: some View {
         NavigationView {
             VStack(spacing: 15) {
                 Text("Please enter your email address:")
-                LogInAndPasswordTextFields(email: $viewModel.email)
+                LogInAndPasswordTextFields(email: $resetPasswordVM.email)
                 ButtonForAuthenticationModule(buttonName: "Send", buttonColor: .blue, action: {
-                    viewModel.resetPassword()
+                    resetPasswordVM.passwordResetRequest()
                 })
-                .alert(isPresented: $viewModel.isPresentedAlert) {
-                    Alert(title: Text(viewModel.alertTitle), message: Text(viewModel.alert), dismissButton: .cancel())
+                .alert(isPresented: $resetPasswordVM.isPresentedAlert) {
+                    Alert(title: Text(resetPasswordVM.alertTitle), message: Text(resetPasswordVM.alert), dismissButton: .destructive(Text("Okay").foregroundColor(.black), action: {
+                        if resetPasswordVM.alertTitle != "Ooops!" {
+                            resetPasswordVM.resetEmail()
+                            resetPasswordVM.presentedModalScreen()
+                        }
+                    }))
                 }
             }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button {
-                            viewModel.presentedModalScreen()
-                            viewModel.resetLoginAndPassword()
+                            resetPasswordVM.presentedModalScreen()
+                            resetPasswordVM.resetEmail()
                         } label: {
                             HStack {
                                 Image(systemName: "arrow.left")
@@ -42,6 +47,6 @@ struct ResetPasswordScreen: View {
 struct ResetPasswordScreen_Previews: PreviewProvider {
     static var previews: some View {
         ResetPasswordScreen()
-            .environmentObject(AuthorizationViewModel())
+            .environmentObject(ResetPasswordViewModel(service: ResetPasswordService()))
     }
 }

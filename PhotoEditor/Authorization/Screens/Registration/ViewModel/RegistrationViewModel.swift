@@ -41,6 +41,8 @@ final class RegisterUser: ObservableObject {
             .register(with: user)
             .sink { [weak self] result in
                 switch result {
+                case .finished:
+                    return
                 case .failure(let error):
                     self?.isPresentedAlert = true
                     self?.alertTitle = "Ooops!"
@@ -50,15 +52,14 @@ final class RegisterUser: ObservableObject {
                         self?.isPresentedAlert = true
                         self?.alert = "Your passwords don't match"
                     }
-                default: break
                 }
-                } receiveValue: { [weak self] in
-                    self?.presentedFullScreen()
-                    self?.resetLoginAndPassword()
-                }
-                
-                .store(in: &subscriptions)
+            } receiveValue: { [weak self] in
+                self?.presentedFullScreen()
+                self?.resetLoginAndPassword()
             }
+        
+            .store(in: &subscriptions)
+    }
     
     func passwordsAreTheSame() -> Bool {
         password == repeatPassword
