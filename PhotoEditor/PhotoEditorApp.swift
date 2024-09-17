@@ -21,10 +21,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct PhotoEditorApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var viewModel = AuthorizationViewModel()
+//    @StateObject private var loginVM = LoginViewModel(service: LoginService())
+    @StateObject private var registerVM = RegisterUser(service: RegistrationService())
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
+//                .environmentObject(loginVM)
+                .environmentObject(registerVM)
         }
     }
 }

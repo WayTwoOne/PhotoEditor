@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct RegistrationButtonView: View {
-    @EnvironmentObject var viewModel: AuthorizationViewModel
+    @EnvironmentObject var registerVM: RegisterUser
+    
     var body: some View {
         HStack {
             Text("Dont have an account?")
             Button {
-                viewModel.resetLoginAndPassword()
-                viewModel.presentedFullScreen()
+                registerVM.presentedFullScreen()
             } label: {
                 Text("Sign up")
                     .foregroundColor(.blue)
-            }.fullScreenCover(isPresented: $viewModel.isPresentedFullScreen) {
+            }.fullScreenCover(isPresented: $registerVM.isPresentedFullScreen) {
                 RegistrationScreen()
             }
         }

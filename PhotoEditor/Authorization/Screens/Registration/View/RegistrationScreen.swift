@@ -8,25 +8,23 @@
 import SwiftUI
 
 struct RegistrationScreen: View {
-    @EnvironmentObject var viewModel: AuthorizationViewModel
+    @EnvironmentObject var registerVM: RegisterUser
     
     var body: some View {
         NavigationView {
             VStack {
-                LogInAndPasswordTextFields(email: $viewModel.email, password: $viewModel.password, repeatPassword: $viewModel.repeatPassword, isSignIn: true, isNewUser: true)
+                LogInAndPasswordTextFields(email: $registerVM.email, password: $registerVM.password, repeatPassword: $registerVM.repeatPassword, isSignIn: true, isNewUser: true)
                 ButtonForAuthenticationModule(buttonName: "Register", buttonColor: .green, action: {
-                    viewModel.register()
-                    viewModel.resetLoginAndPassword()
-                    viewModel.presentedFullScreen()
-                }).alert(isPresented: $viewModel.isPresentedAlert) {
-                    Alert(title: Text("Ooops!"), message: Text(viewModel.alert), dismissButton: .cancel())
+                    registerVM.registerUser()
+                }).alert(isPresented: $registerVM.isPresentedAlert) {
+                    Alert(title: Text(registerVM.alertTitle), message: Text(registerVM.alert), dismissButton: .cancel())
                 }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        viewModel.resetLoginAndPassword()
-                        viewModel.presentedFullScreen()
+                        registerVM.resetLoginAndPassword()
+                        registerVM.presentedFullScreen()
                     } label: {
                         HStack {
                             Image(systemName: "arrow.left")
@@ -44,6 +42,6 @@ struct RegistrationScreen: View {
 struct RegistrationScreen_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationScreen()
-            .environmentObject(AuthorizationViewModel())
+            .environmentObject(RegisterUser(service: RegistrationService()))
     }
 }

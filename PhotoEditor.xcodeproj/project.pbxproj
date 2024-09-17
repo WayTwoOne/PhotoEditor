@@ -26,6 +26,10 @@
 		E744E9BF2C99A5100052C4D7 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E744E9BE2C99A5100052C4D7 /* FirebaseStorage */; };
 		E744E9C12C99B44F0052C4D7 /* EditorTestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9C02C99B44F0052C4D7 /* EditorTestScreen.swift */; };
 		E744E9C32C99BED10052C4D7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9C22C99BED10052C4D7 /* LoadingView.swift */; };
+		E744E9CD2C99F5C50052C4D7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9CC2C99F5C50052C4D7 /* LoginViewModel.swift */; };
+		E744E9D12C99F9030052C4D7 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9D02C99F9030052C4D7 /* RegistrationService.swift */; };
+		E744E9D32C99FD8D0052C4D7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9D22C99FD8D0052C4D7 /* RegistrationViewModel.swift */; };
+		E744E9D62C9A18200052C4D7 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9D52C9A18200052C4D7 /* LoginService.swift */; };
 		E75A3B012C98203B00981E69 /* PhotoEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75A3B002C98203B00981E69 /* PhotoEditorApp.swift */; };
 		E75A3B032C98203B00981E69 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75A3B022C98203B00981E69 /* ContentView.swift */; };
 		E75A3B052C98203D00981E69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75A3B042C98203D00981E69 /* Assets.xcassets */; };
@@ -48,6 +52,10 @@
 		E744E9B32C9989AC0052C4D7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E744E9C02C99B44F0052C4D7 /* EditorTestScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTestScreen.swift; sourceTree = "<group>"; };
 		E744E9C22C99BED10052C4D7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		E744E9CC2C99F5C50052C4D7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E744E9D02C99F9030052C4D7 /* RegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
+		E744E9D22C99FD8D0052C4D7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		E744E9D52C9A18200052C4D7 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		E75A3AFD2C98203B00981E69 /* PhotoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75A3B002C98203B00981E69 /* PhotoEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorApp.swift; sourceTree = "<group>"; };
 		E75A3B022C98203B00981E69 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,35 +86,35 @@
 			children = (
 				E744E9B22C99899A0052C4D7 /* Models */,
 				E720F9122C98A62B009DB53A /* ViewModels */,
-				E720F90A2C98811D009DB53A /* Views */,
+				E720F90A2C98811D009DB53A /* Screens */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
 		};
-		E720F9002C987EC5009DB53A /* Registration */ = {
+		E720F9002C987EC5009DB53A /* View */ = {
 			isa = PBXGroup;
 			children = (
 				E720F91B2C98BA6D009DB53A /* RegistrationButtonView.swift */,
 				E720F90D2C98A534009DB53A /* RegistrationScreen.swift */,
 			);
-			path = Registration;
+			path = View;
 			sourceTree = "<group>";
 		};
-		E720F9012C987EFC009DB53A /* LogIn */ = {
+		E720F9012C987EFC009DB53A /* View */ = {
 			isa = PBXGroup;
 			children = (
 				E720F9062C988067009DB53A /* LogInScreen.swift */,
 			);
-			path = LogIn;
+			path = View;
 			sourceTree = "<group>";
 		};
-		E720F9022C987F76009DB53A /* GoogleLogIn */ = {
+		E720F9022C987F76009DB53A /* GoogleSignInView */ = {
 			isa = PBXGroup;
 			children = (
 				E720F9082C988111009DB53A /* GoogleAuthorization.swift */,
 				E720F91D2C98BCCA009DB53A /* GoogleSignButton.swift */,
 			);
-			path = GoogleLogIn;
+			path = GoogleSignInView;
 			sourceTree = "<group>";
 		};
 		E720F9032C987F95009DB53A /* CommonFiles */ = {
@@ -120,24 +128,24 @@
 			path = CommonFiles;
 			sourceTree = "<group>";
 		};
-		E720F90A2C98811D009DB53A /* Views */ = {
+		E720F90A2C98811D009DB53A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E720F9012C987EFC009DB53A /* LogIn */,
-				E720F90F2C98A605009DB53A /* ResetPassword */,
-				E720F9002C987EC5009DB53A /* Registration */,
-				E720F9022C987F76009DB53A /* GoogleLogIn */,
+				E744E9C42C99F5010052C4D7 /* Login */,
+				E744E9C62C99F51F0052C4D7 /* ResetPassword */,
+				E744E9C82C99F5430052C4D7 /* Registration */,
+				E744E9CA2C99F5790052C4D7 /* GoogleSignIn */,
 			);
-			path = Views;
+			path = Screens;
 			sourceTree = "<group>";
 		};
-		E720F90F2C98A605009DB53A /* ResetPassword */ = {
+		E720F90F2C98A605009DB53A /* ResetPasswordView */ = {
 			isa = PBXGroup;
 			children = (
 				E720F9102C98A616009DB53A /* ResetPasswordView.swift */,
 				E720F9192C98B5C4009DB53A /* ResetPasswordScreen.swift */,
 			);
-			path = ResetPassword;
+			path = ResetPasswordView;
 			sourceTree = "<group>";
 		};
 		E720F9122C98A62B009DB53A /* ViewModels */ = {
@@ -154,6 +162,90 @@
 				E744E9B32C9989AC0052C4D7 /* UserModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E744E9C42C99F5010052C4D7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E744E9D42C9A18040052C4D7 /* Services */,
+				E744E9C52C99F50D0052C4D7 /* ViewModel */,
+				E720F9012C987EFC009DB53A /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E744E9C52C99F50D0052C4D7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E744E9CC2C99F5C50052C4D7 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E744E9C62C99F51F0052C4D7 /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				E744E9C72C99F52C0052C4D7 /* ResetPasswordViewModels */,
+				E720F90F2C98A605009DB53A /* ResetPasswordView */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		E744E9C72C99F52C0052C4D7 /* ResetPasswordViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ResetPasswordViewModels;
+			sourceTree = "<group>";
+		};
+		E744E9C82C99F5430052C4D7 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				E744E9CF2C99F8EE0052C4D7 /* Services */,
+				E744E9C92C99F5580052C4D7 /* ViewModel */,
+				E720F9002C987EC5009DB53A /* View */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		E744E9C92C99F5580052C4D7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E744E9D22C99FD8D0052C4D7 /* RegistrationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E744E9CA2C99F5790052C4D7 /* GoogleSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				E744E9CB2C99F5820052C4D7 /* GoogleSignInViewModels */,
+				E720F9022C987F76009DB53A /* GoogleSignInView */,
+			);
+			path = GoogleSignIn;
+			sourceTree = "<group>";
+		};
+		E744E9CB2C99F5820052C4D7 /* GoogleSignInViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GoogleSignInViewModels;
+			sourceTree = "<group>";
+		};
+		E744E9CF2C99F8EE0052C4D7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E744E9D02C99F9030052C4D7 /* RegistrationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E744E9D42C9A18040052C4D7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E744E9D52C9A18200052C4D7 /* LoginService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		E75A3AF42C98203B00981E69 = {
@@ -280,13 +372,17 @@
 				E720F9142C98A642009DB53A /* AuthorizationViewModel.swift in Sources */,
 				E720F91A2C98B5C4009DB53A /* ResetPasswordScreen.swift in Sources */,
 				E720F90E2C98A534009DB53A /* RegistrationScreen.swift in Sources */,
+				E744E9D32C99FD8D0052C4D7 /* RegistrationViewModel.swift in Sources */,
 				E720F9072C988067009DB53A /* LogInScreen.swift in Sources */,
+				E744E9D12C99F9030052C4D7 /* RegistrationService.swift in Sources */,
 				E720F9052C987FD7009DB53A /* LogInAndPasswordTextFields.swift in Sources */,
+				E744E9D62C9A18200052C4D7 /* LoginService.swift in Sources */,
 				E744E9C32C99BED10052C4D7 /* LoadingView.swift in Sources */,
 				E720F9112C98A616009DB53A /* ResetPasswordView.swift in Sources */,
 				E720F9092C988111009DB53A /* GoogleAuthorization.swift in Sources */,
 				E744E9C12C99B44F0052C4D7 /* EditorTestScreen.swift in Sources */,
 				E75A3B032C98203B00981E69 /* ContentView.swift in Sources */,
+				E744E9CD2C99F5C50052C4D7 /* LoginViewModel.swift in Sources */,
 				E744E9B42C9989AC0052C4D7 /* UserModel.swift in Sources */,
 				E720F90C2C989806009DB53A /* ButtonForAuthenticationModule.swift in Sources */,
 				E720F91C2C98BA6D009DB53A /* RegistrationButtonView.swift in Sources */,
