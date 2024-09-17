@@ -14,8 +14,10 @@ struct RegistrationScreen: View {
         NavigationView {
             VStack {
                 LogInAndPasswordTextFields(email: $viewModel.email, password: $viewModel.password, repeatPassword: $viewModel.repeatPassword, isSignIn: true, isNewUser: true)
-                LoginOrRegistrationButtonView(buttonName: "Register", buttonColor: .green, action: {
+                ButtonForAuthenticationModule(buttonName: "Register", buttonColor: .green, action: {
                     viewModel.register()
+                    viewModel.resetLoginAndPassword()
+                    viewModel.presentedFullScreen()
                 }).alert(isPresented: $viewModel.isPresentedAlert) {
                     Alert(title: Text("Ooops!"), message: Text(viewModel.alert), dismissButton: .cancel())
                 }

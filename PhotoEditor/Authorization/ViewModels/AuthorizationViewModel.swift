@@ -14,10 +14,12 @@ final class AuthorizationViewModel: ObservableObject {
     @Published var password = ""
     @Published var repeatPassword = ""
     
-    @Published var alert = ""
+    var alertTitle = ""
+    var alert = ""
     
     @Published var isPresentedFullScreen = false
     @Published var isPresentedEditorScreen = false
+    @Published var isPresentedModalScreen = false
     @Published var isPresentedAlert = false
     
     func auth() {
@@ -58,10 +60,6 @@ final class AuthorizationViewModel: ObservableObject {
                 return
             }
             
-            self.resetLoginAndPassword()
-            
-            self.presentedFullScreen()
-            
             self.sendEmailVerification(with: result)
             
             self.addNewUserInBase(with: result, and: user)
@@ -70,6 +68,20 @@ final class AuthorizationViewModel: ObservableObject {
     
     func resetPassword() {
         
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            switch error {
+            case .none:
+                self.isPresentedAlert = true
+                self.alertTitle = "Notification"
+                self.alert = "Instructions on how to change your password have been sent to your email!"
+            case .some(let error):
+                self.isPresentedAlert = true
+                self.alertTitle = "Ooops!"
+                self.alert = error.localizedDescription
+            }
+            self.presentedModalScreen()
+        }
     }
     
     func sendEmailVerification(with result: AuthDataResult?) {
@@ -111,5 +123,9 @@ final class AuthorizationViewModel: ObservableObject {
     
     func presentedFullScreen() {
         isPresentedFullScreen.toggle()
+    }
+    
+    func presentedModalScreen() {
+        isPresentedModalScreen.toggle()
     }
 }

@@ -17,7 +17,7 @@ struct LogInScreen: View {
                 
                 ResetPasswordView()
 
-                LoginOrRegistrationButtonView(buttonName: "Login", buttonColor: .green, action: {
+                ButtonForAuthenticationModule(buttonName: "Login", buttonColor: .green, action: {
                     viewModel.auth()
                 }).alert(isPresented: $viewModel.isPresentedAlert) {
                     Alert(title: Text("Ooops!"), message: Text(viewModel.alert), dismissButton: .cancel())

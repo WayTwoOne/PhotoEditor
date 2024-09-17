@@ -10,7 +10,32 @@ import SwiftUI
 struct ResetPasswordScreen: View {
     @EnvironmentObject var viewModel: AuthorizationViewModel
     var body: some View {
-        LogInAndPasswordTextFields(email: $viewModel.email)
+        NavigationView {
+            VStack(spacing: 15) {
+                Text("Please enter your email address:")
+                LogInAndPasswordTextFields(email: $viewModel.email)
+                ButtonForAuthenticationModule(buttonName: "Send", buttonColor: .blue, action: {
+                    viewModel.resetPassword()
+                })
+                .alert(isPresented: $viewModel.isPresentedAlert) {
+                    Alert(title: Text(viewModel.alertTitle), message: Text(viewModel.alert), dismissButton: .cancel())
+                }
+            }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            viewModel.presentedModalScreen()
+                            viewModel.resetLoginAndPassword()
+                        } label: {
+                            HStack {
+                                Image(systemName: "arrow.left")
+                                Text("Login")
+                            }
+                            .foregroundColor(.black)
+                        }
+                    }
+                }
+        }
     }
 }
 

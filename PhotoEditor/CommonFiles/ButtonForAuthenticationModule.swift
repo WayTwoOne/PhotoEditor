@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginOrRegistrationButtonView: View {
+struct ButtonForAuthenticationModule: View {
     @State var buttonName = ""
     @State var buttonColor = Color.blue
     var action: () -> Void
@@ -33,6 +33,6 @@ struct LoginOrRegistrationButtonView: View {
 
 struct LogInButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginOrRegistrationButtonView(action: {})
+        ButtonForAuthenticationModule(action: {})
     }
 }
