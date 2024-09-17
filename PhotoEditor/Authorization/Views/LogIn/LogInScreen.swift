@@ -16,9 +16,7 @@ struct LogInScreen: View {
                 LogInAndPasswordTextFields(email: $viewModel.email, password: $viewModel.password, isNewUser: false)
                 
                 ResetPasswordView()
-                
-                
-                
+
                 LoginOrRegistrationButtonView(buttonName: "Login", buttonColor: .green, action: {
                     viewModel.auth()
                 })
