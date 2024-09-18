@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GoogleSignButton: View {
+struct GoogleSignButtonView: View {
     private var width = UIScreen.main.bounds.width
     private var height = UIScreen.main.bounds.height
     
@@ -20,6 +20,6 @@ struct GoogleSignButton: View {
 
 struct GoogleSignButton_Previews: PreviewProvider {
     static var previews: some View {
-        GoogleSignButton()
+        GoogleSignButtonView()
     }
 }
