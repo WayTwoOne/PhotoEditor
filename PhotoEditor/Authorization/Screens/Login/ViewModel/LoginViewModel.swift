@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import Firebase
+import UIComponents
 
 enum LoginState {
     case successfullyRegistered

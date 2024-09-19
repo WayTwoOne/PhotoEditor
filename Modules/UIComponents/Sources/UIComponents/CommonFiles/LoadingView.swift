@@ -7,10 +7,14 @@
 
 import SwiftUI
 
-struct LoadingView: View {
-    @State private var animate = false
+public struct LoadingView: View {
+    @State var animate = false
+    
+    public init(animate: Bool = false) {
+        self.animate = animate
+    }
 
-    var body: some View {
+    public var body: some View {
         ZStack {
             Circle()
                 .stroke(Color.gray.opacity(0.3), lineWidth: 14)

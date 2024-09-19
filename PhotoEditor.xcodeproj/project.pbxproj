@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E720F9052C987FD7009DB53A /* LogInAndPasswordTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F9042C987FD7009DB53A /* LogInAndPasswordTextFields.swift */; };
 		E720F9072C988067009DB53A /* LogInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F9062C988067009DB53A /* LogInScreen.swift */; };
 		E720F9092C988111009DB53A /* GoogleAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F9082C988111009DB53A /* GoogleAuthorization.swift */; };
-		E720F90C2C989806009DB53A /* ButtonForAuthenticationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F90B2C989806009DB53A /* ButtonForAuthenticationModule.swift */; };
 		E720F90E2C98A534009DB53A /* RegistrationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F90D2C98A534009DB53A /* RegistrationScreen.swift */; };
 		E720F9112C98A616009DB53A /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F9102C98A616009DB53A /* ResetPasswordView.swift */; };
-		E720F9162C98ADA0009DB53A /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F9152C98ADA0009DB53A /* ForgotPassword.swift */; };
 		E720F91A2C98B5C4009DB53A /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F9192C98B5C4009DB53A /* ResetPasswordScreen.swift */; };
 		E720F91C2C98BA6D009DB53A /* RegistrationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F91B2C98BA6D009DB53A /* RegistrationButtonView.swift */; };
 		E720F91E2C98BCCA009DB53A /* GoogleSignButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720F91D2C98BCCA009DB53A /* GoogleSignButtonView.swift */; };
 		E744E9B42C9989AC0052C4D7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9B32C9989AC0052C4D7 /* UserModel.swift */; };
 		E744E9C12C99B44F0052C4D7 /* EditorTestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9C02C99B44F0052C4D7 /* EditorTestScreen.swift */; };
-		E744E9C32C99BED10052C4D7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9C22C99BED10052C4D7 /* LoadingView.swift */; };
 		E744E9CD2C99F5C50052C4D7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9CC2C99F5C50052C4D7 /* LoginViewModel.swift */; };
 		E744E9D12C99F9030052C4D7 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9D02C99F9030052C4D7 /* RegistrationService.swift */; };
 		E744E9D32C99FD8D0052C4D7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9D22C99FD8D0052C4D7 /* RegistrationViewModel.swift */; };
 		E744E9D62C9A18200052C4D7 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744E9D52C9A18200052C4D7 /* LoginService.swift */; };
+		E74781642C9B9E0300EAB4E6 /* DrawingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747815A2C9B9E0300EAB4E6 /* DrawingViewModel.swift */; };
+		E74781652C9B9E0300EAB4E6 /* Rendition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747815C2C9B9E0300EAB4E6 /* Rendition.swift */; };
+		E74781662C9B9E0300EAB4E6 /* PracticeDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747815D2C9B9E0300EAB4E6 /* PracticeDrawing.swift */; };
+		E74781672C9B9E0300EAB4E6 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747815F2C9B9E0300EAB4E6 /* CanvasView.swift */; };
+		E74781682C9B9E0300EAB4E6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74781602C9B9E0300EAB4E6 /* DrawingView.swift */; };
+		E74781692C9B9E0300EAB4E6 /* MasterpieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74781612C9B9E0300EAB4E6 /* MasterpieceView.swift */; };
+		E747816A2C9B9E0300EAB4E6 /* MasterpieceSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74781622C9B9E0300EAB4E6 /* MasterpieceSelectView.swift */; };
+		E747816B2C9B9E0300EAB4E6 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74781632C9B9E0300EAB4E6 /* ShareSheet.swift */; };
 		E75A3B012C98203B00981E69 /* PhotoEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75A3B002C98203B00981E69 /* PhotoEditorApp.swift */; };
 		E75A3B032C98203B00981E69 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75A3B022C98203B00981E69 /* ContentView.swift */; };
 		E75A3B052C98203D00981E69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75A3B042C98203D00981E69 /* Assets.xcassets */; };
@@ -43,26 +47,32 @@
 		E7BB9EC42C9AD51600BFCD03 /* GoogleSignInModalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB9EC32C9AD51600BFCD03 /* GoogleSignInModalScreen.swift */; };
 		E7D4F5D92C9A3DD300BC0310 /* ResetPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4F5D82C9A3DD300BC0310 /* ResetPasswordService.swift */; };
 		E7D4F5DB2C9A3E5500BC0310 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4F5DA2C9A3E5500BC0310 /* ResetPasswordViewModel.swift */; };
+		E7ED08202C9BA16600579534 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = E7ED081F2C9BA16600579534 /* UIComponents */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E720F9042C987FD7009DB53A /* LogInAndPasswordTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInAndPasswordTextFields.swift; sourceTree = "<group>"; };
 		E720F9062C988067009DB53A /* LogInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreen.swift; sourceTree = "<group>"; };
 		E720F9082C988111009DB53A /* GoogleAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthorization.swift; sourceTree = "<group>"; };
-		E720F90B2C989806009DB53A /* ButtonForAuthenticationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonForAuthenticationModule.swift; sourceTree = "<group>"; };
 		E720F90D2C98A534009DB53A /* RegistrationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreen.swift; sourceTree = "<group>"; };
 		E720F9102C98A616009DB53A /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
-		E720F9152C98ADA0009DB53A /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		E720F9192C98B5C4009DB53A /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
 		E720F91B2C98BA6D009DB53A /* RegistrationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationButtonView.swift; sourceTree = "<group>"; };
 		E720F91D2C98BCCA009DB53A /* GoogleSignButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignButtonView.swift; sourceTree = "<group>"; };
 		E744E9B32C9989AC0052C4D7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E744E9C02C99B44F0052C4D7 /* EditorTestScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTestScreen.swift; sourceTree = "<group>"; };
-		E744E9C22C99BED10052C4D7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E744E9CC2C99F5C50052C4D7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E744E9D02C99F9030052C4D7 /* RegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
 		E744E9D22C99FD8D0052C4D7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		E744E9D52C9A18200052C4D7 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		E747815A2C9B9E0300EAB4E6 /* DrawingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewModel.swift; sourceTree = "<group>"; };
+		E747815C2C9B9E0300EAB4E6 /* Rendition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rendition.swift; sourceTree = "<group>"; };
+		E747815D2C9B9E0300EAB4E6 /* PracticeDrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeDrawing.swift; sourceTree = "<group>"; };
+		E747815F2C9B9E0300EAB4E6 /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		E74781602C9B9E0300EAB4E6 /* DrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		E74781612C9B9E0300EAB4E6 /* MasterpieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterpieceView.swift; sourceTree = "<group>"; };
+		E74781622C9B9E0300EAB4E6 /* MasterpieceSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterpieceSelectView.swift; sourceTree = "<group>"; };
+		E74781632C9B9E0300EAB4E6 /* ShareSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		E747816D2C9BA04200EAB4E6 /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UIComponents; path = Modules/UIComponents; sourceTree = "<group>"; };
 		E75A3AFD2C98203B00981E69 /* PhotoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75A3B002C98203B00981E69 /* PhotoEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorApp.swift; sourceTree = "<group>"; };
 		E75A3B022C98203B00981E69 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7ED08202C9BA16600579534 /* UIComponents in Frameworks */,
 				E7BB9EB02C9AC70B00BFCD03 /* FirebaseDatabase in Frameworks */,
 				E7BB9EB22C9AC70B00BFCD03 /* FirebaseFirestore in Frameworks */,
 				E7BB9EB92C9AC86D00BFCD03 /* GoogleSignInSwift in Frameworks */,
@@ -131,17 +142,6 @@
 				E7BB9EC32C9AD51600BFCD03 /* GoogleSignInModalScreen.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		E720F9032C987F95009DB53A /* CommonFiles */ = {
-			isa = PBXGroup;
-			children = (
-				E720F9042C987FD7009DB53A /* LogInAndPasswordTextFields.swift */,
-				E720F90B2C989806009DB53A /* ButtonForAuthenticationModule.swift */,
-				E720F9152C98ADA0009DB53A /* ForgotPassword.swift */,
-				E744E9C22C99BED10052C4D7 /* LoadingView.swift */,
-			);
-			path = CommonFiles;
 			sourceTree = "<group>";
 		};
 		E720F90A2C98811D009DB53A /* Screens */ = {
@@ -260,11 +260,52 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		E74781582C9B9E0300EAB4E6 /* PhotoEiditorScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E74781592C9B9E0300EAB4E6 /* ViewModels */,
+				E747815B2C9B9E0300EAB4E6 /* Models */,
+				E747815E2C9B9E0300EAB4E6 /* Views */,
+			);
+			path = PhotoEiditorScreen;
+			sourceTree = "<group>";
+		};
+		E74781592C9B9E0300EAB4E6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E747815A2C9B9E0300EAB4E6 /* DrawingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E747815B2C9B9E0300EAB4E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E747815C2C9B9E0300EAB4E6 /* Rendition.swift */,
+				E747815D2C9B9E0300EAB4E6 /* PracticeDrawing.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E747815E2C9B9E0300EAB4E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E747815F2C9B9E0300EAB4E6 /* CanvasView.swift */,
+				E74781602C9B9E0300EAB4E6 /* DrawingView.swift */,
+				E74781612C9B9E0300EAB4E6 /* MasterpieceView.swift */,
+				E74781622C9B9E0300EAB4E6 /* MasterpieceSelectView.swift */,
+				E74781632C9B9E0300EAB4E6 /* ShareSheet.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E75A3AF42C98203B00981E69 = {
 			isa = PBXGroup;
 			children = (
+				E747816D2C9BA04200EAB4E6 /* UIComponents */,
 				E75A3AFF2C98203B00981E69 /* PhotoEditor */,
 				E75A3AFE2C98203B00981E69 /* Products */,
+				E7ED081E2C9BA16600579534 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -284,8 +325,8 @@
 				E7BB9EC12C9ACDDC00BFCD03 /* ApplicationUtility.swift */,
 				E75A3B022C98203B00981E69 /* ContentView.swift */,
 				E744E9C02C99B44F0052C4D7 /* EditorTestScreen.swift */,
+				E74781582C9B9E0300EAB4E6 /* PhotoEiditorScreen */,
 				E720F8FF2C987EB8009DB53A /* Authorization */,
-				E720F9032C987F95009DB53A /* CommonFiles */,
 				E75A3B042C98203D00981E69 /* Assets.xcassets */,
 				E75A3B122C9830FE00981E69 /* Info.plist */,
 				E75A3B102C9830DE00981E69 /* GoogleService-Info.plist */,
@@ -318,6 +359,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		E7ED081E2C9BA16600579534 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -342,6 +390,7 @@
 				E7BB9EB32C9AC70B00BFCD03 /* FirebaseStorage */,
 				E7BB9EB62C9AC86D00BFCD03 /* GoogleSignIn */,
 				E7BB9EB82C9AC86D00BFCD03 /* GoogleSignInSwift */,
+				E7ED081F2C9BA16600579534 /* UIComponents */,
 			);
 			productName = PhotoEditor;
 			productReference = E75A3AFD2C98203B00981E69 /* PhotoEditor.app */;
@@ -404,29 +453,33 @@
 			files = (
 				E7BB9EBB2C9AC95A00BFCD03 /* AppDelegate.swift in Sources */,
 				E720F91A2C98B5C4009DB53A /* ResetPasswordScreen.swift in Sources */,
+				E74781672C9B9E0300EAB4E6 /* CanvasView.swift in Sources */,
 				E720F90E2C98A534009DB53A /* RegistrationScreen.swift in Sources */,
+				E74781682C9B9E0300EAB4E6 /* DrawingView.swift in Sources */,
 				E744E9D32C99FD8D0052C4D7 /* RegistrationViewModel.swift in Sources */,
 				E720F9072C988067009DB53A /* LogInScreen.swift in Sources */,
 				E7D4F5DB2C9A3E5500BC0310 /* ResetPasswordViewModel.swift in Sources */,
+				E747816A2C9B9E0300EAB4E6 /* MasterpieceSelectView.swift in Sources */,
+				E74781662C9B9E0300EAB4E6 /* PracticeDrawing.swift in Sources */,
+				E74781652C9B9E0300EAB4E6 /* Rendition.swift in Sources */,
 				E744E9D12C99F9030052C4D7 /* RegistrationService.swift in Sources */,
 				E7BB9EC02C9ACBA000BFCD03 /* GoogleSignInViewModel.swift in Sources */,
-				E720F9052C987FD7009DB53A /* LogInAndPasswordTextFields.swift in Sources */,
 				E744E9D62C9A18200052C4D7 /* LoginService.swift in Sources */,
-				E744E9C32C99BED10052C4D7 /* LoadingView.swift in Sources */,
 				E720F9112C98A616009DB53A /* ResetPasswordView.swift in Sources */,
 				E720F9092C988111009DB53A /* GoogleAuthorization.swift in Sources */,
 				E744E9C12C99B44F0052C4D7 /* EditorTestScreen.swift in Sources */,
+				E74781642C9B9E0300EAB4E6 /* DrawingViewModel.swift in Sources */,
 				E75A3B032C98203B00981E69 /* ContentView.swift in Sources */,
+				E747816B2C9B9E0300EAB4E6 /* ShareSheet.swift in Sources */,
 				E7D4F5D92C9A3DD300BC0310 /* ResetPasswordService.swift in Sources */,
 				E744E9CD2C99F5C50052C4D7 /* LoginViewModel.swift in Sources */,
 				E7BB9EC22C9ACDDC00BFCD03 /* ApplicationUtility.swift in Sources */,
 				E7BB9EC42C9AD51600BFCD03 /* GoogleSignInModalScreen.swift in Sources */,
 				E744E9B42C9989AC0052C4D7 /* UserModel.swift in Sources */,
-				E720F90C2C989806009DB53A /* ButtonForAuthenticationModule.swift in Sources */,
 				E720F91C2C98BA6D009DB53A /* RegistrationButtonView.swift in Sources */,
 				E720F91E2C98BCCA009DB53A /* GoogleSignButtonView.swift in Sources */,
 				E75A3B012C98203B00981E69 /* PhotoEditorApp.swift in Sources */,
-				E720F9162C98ADA0009DB53A /* ForgotPassword.swift in Sources */,
+				E74781692C9B9E0300EAB4E6 /* MasterpieceView.swift in Sources */,
 				E7BB9EBE2C9ACB9100BFCD03 /* GoogleSignInService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,6 +744,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E7BB9EB52C9AC86D00BFCD03 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		E7ED081F2C9BA16600579534 /* UIComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIComponents;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

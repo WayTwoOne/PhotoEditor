@@ -7,19 +7,26 @@
 
 import SwiftUI
 
-struct ButtonForAuthenticationModule: View {
-    @State var buttonName = ""
-    @State var buttonColor = Color.blue
-    var action: () -> Void
+public struct ButtonForAuthenticationModule: View {
+    @State public var buttonName = ""
+    @State public var buttonColor = Color.blue
+    public var action: () -> Void
     private let width = UIScreen.main.bounds.width
     private let height = UIScreen.main.bounds.height
-    var body: some View {
+    
+    public init(buttonName: String = "", buttonColor: SwiftUI.Color = Color.blue, action: @escaping () -> Void) {
+        self.buttonName = buttonName
+        self.buttonColor = buttonColor
+        self.action = action
+    }
+    
+    public var body: some View {
         Button {
             action()
         } label: {
             ZStack {
                 Rectangle()
-                    .frame(width: width * 0.35, height: height * 0.08, alignment: .center)
+                    .frame(width: width * 0.65, height: height * 0.08, alignment: .center)
                     .foregroundColor(buttonColor)
                 Text(buttonName)
                     .font(.system(size: 20))
@@ -28,11 +35,5 @@ struct ButtonForAuthenticationModule: View {
             .cornerRadius(15)
         }
 
-    }
-}
-
-struct LogInButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonForAuthenticationModule(action: {})
     }
 }

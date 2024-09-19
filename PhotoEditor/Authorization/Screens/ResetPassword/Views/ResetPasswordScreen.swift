@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIComponents
 
 struct ResetPasswordScreen: View {
     @EnvironmentObject var resetPasswordVM: ResetPasswordViewModel
@@ -13,7 +14,7 @@ struct ResetPasswordScreen: View {
         NavigationView {
             VStack(spacing: 15) {
                 Text("Please enter your email address:")
-                LogInAndPasswordTextFields(email: $resetPasswordVM.email)
+                LogInAndPasswordTextFields(email: $resetPasswordVM.email, isSignIn: false, isNewUser: false)
                 ButtonForAuthenticationModule(buttonName: "Send", buttonColor: .blue, action: {
                     resetPasswordVM.passwordResetRequest()
                 })

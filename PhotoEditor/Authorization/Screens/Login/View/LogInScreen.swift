@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIComponents
 
 struct LogInScreen: View {
     @EnvironmentObject var loginVM: LoginViewModel

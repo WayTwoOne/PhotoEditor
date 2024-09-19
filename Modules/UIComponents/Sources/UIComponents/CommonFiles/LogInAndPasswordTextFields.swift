@@ -7,14 +7,22 @@
 
 import SwiftUI
 
-struct LogInAndPasswordTextFields: View {
-    var email: Binding<String>
-    var password: Binding<String>?
-    var repeatPassword: Binding<String>?
-    var isSignIn: Bool = false
-    var isNewUser: Bool = false
+public struct LogInAndPasswordTextFields: View {
+    public var email: Binding<String>
+    public var password: Binding<String>?
+    public var repeatPassword: Binding<String>?
+    public var isSignIn: Bool = false
+    public var isNewUser: Bool = false
     
-    var body: some View {
+    public init(email: Binding<String>, password: Binding<String>? = nil, repeatPassword: Binding<String>? = nil, isSignIn: Bool, isNewUser: Bool) {
+        self.email = email
+        self.password = password
+        self.repeatPassword = repeatPassword
+        self.isSignIn = isSignIn
+        self.isNewUser = isNewUser
+    }
+    
+    public var body: some View {
         VStack() {
             TextField("Email", text: email)
                 .padding()
@@ -37,11 +45,5 @@ struct LogInAndPasswordTextFields: View {
             
         }
         .padding(.horizontal)
-    }
-}
-
-struct LogInAndPasswordTextFields_Previews: PreviewProvider {
-    static var previews: some View {
-        LogInAndPasswordTextFields(email: .constant("Hello"), password: .constant("Bye"))
     }
 }
