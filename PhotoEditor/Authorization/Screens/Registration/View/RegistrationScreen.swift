@@ -15,7 +15,7 @@ struct RegistrationScreen: View {
         NavigationView {
             VStack {
                 LogInAndPasswordTextFields(email: $registerVM.email, password: $registerVM.password, repeatPassword: $registerVM.repeatPassword, isSignIn: true, isNewUser: true)
-                ButtonForAuthenticationModule(buttonName: "Register", buttonColor: .green, action: {
+                ButtonForAuthenticationModule(buttonName: "Register", buttonColor: .blue, action: {
                     registerVM.registerUser()
                 }).alert(isPresented: $registerVM.isPresentedAlert) {
                     Alert(title: Text(registerVM.alertTitle), message: Text(registerVM.alert), dismissButton: .cancel())
@@ -29,13 +29,15 @@ struct RegistrationScreen: View {
                     } label: {
                         HStack {
                             Image(systemName: "arrow.left")
-                            Text("Login")
+                            Text("Authorization")
                         }
                         .foregroundColor(.black)
                     }
 
                 }
             }
+            .navigationTitle("Registration")
+            .navigationBarTitleDisplayMode(.large)
         }
     }
 }

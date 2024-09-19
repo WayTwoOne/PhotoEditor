@@ -9,15 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var loginVM = LoginViewModel(service: LoginService())
+    @StateObject private var drawingVM = DrawingViewModel()
     var body: some View {
         NavigationView {
             if !loginVM.isPresentedEditorScreen {
                 LogInScreen()
             } else {
-                EditorTestScreen()
+               DrawingView()
             }
         }
         .environmentObject(loginVM)
+        .environmentObject(drawingVM)
     }
 }
 

@@ -35,12 +35,14 @@ struct ResetPasswordScreen: View {
                         } label: {
                             HStack {
                                 Image(systemName: "arrow.left")
-                                Text("Login")
+                                Text("Authorization")
                             }
                             .foregroundColor(.black)
                         }
                     }
                 }
+                .navigationTitle("Reset password")
+                .navigationBarTitleDisplayMode(.large)
         }
     }
 }

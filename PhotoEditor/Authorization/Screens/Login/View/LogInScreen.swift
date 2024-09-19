@@ -20,7 +20,7 @@ struct LogInScreen: View {
                 
                 ResetPasswordView()
 
-                ButtonForAuthenticationModule(buttonName: "Sign in", buttonColor: .green, action: {
+                ButtonForAuthenticationModule(buttonName: "Sign in", buttonColor: .blue, action: {
                     loginVM.auth()
                 }).alert(isPresented: $loginVM.isPresentedAlert) {
                     Alert(title: Text(loginVM.alertTitle), message: Text(loginVM.alert), dismissButton: .cancel())
@@ -38,6 +38,7 @@ struct LogInScreen: View {
                     .padding()
             }
             .navigationTitle("Authorization")
+            .navigationBarTitleDisplayMode(.large)
             
         }
         .environmentObject(registerVM)

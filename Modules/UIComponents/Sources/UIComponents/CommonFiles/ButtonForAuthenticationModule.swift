@@ -26,7 +26,7 @@ public struct ButtonForAuthenticationModule: View {
         } label: {
             ZStack {
                 Rectangle()
-                    .frame(width: width * 0.65, height: height * 0.08, alignment: .center)
+                    .frame(width: width * 0.9, height: height * 0.08, alignment: .center)
                     .foregroundColor(buttonColor)
                 Text(buttonName)
                     .font(.system(size: 20))
@@ -35,5 +35,13 @@ public struct ButtonForAuthenticationModule: View {
             .cornerRadius(15)
         }
 
+    }
+}
+
+struct ButtonForAuthenticationModule_Previews: PreviewProvider {
+    static var previews: some View {
+        ButtonForAuthenticationModule(buttonName: "Hello wordl", buttonColor: .blue) {
+            ()
+        }
     }
 }
